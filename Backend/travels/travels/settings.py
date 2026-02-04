@@ -55,6 +55,11 @@ REST_FRAMEWORK = {
     ]
 }
 
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+# Optional: for caching static files
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 MIDDLEWARE = [
      "corsheaders.middleware.CorsMiddleware",
