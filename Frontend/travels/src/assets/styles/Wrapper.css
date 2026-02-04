@@ -1,0 +1,632 @@
+/* Wrapper.css */
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+  background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  min-height: 80px;
+  border-bottom: 3px solid #fbbf24;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.logo a:hover {
+  transform: translateY(-2px);
+}
+
+.logo img {
+  height: 55px;
+  width: auto;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  transition: transform 0.3s ease;
+  border-radius: 8px;
+}
+
+.logo a:hover img {
+  transform: rotate(-5deg) scale(1.05);
+}
+
+.logo p {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(to right, #fbbf24, #fef3c7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.3s ease;
+}
+
+.logo a:hover p {
+  background: linear-gradient(to right, #fef3c7, #fbbf24);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Login container for buttons when logged in */
+.login {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Common button styles */
+.main button {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 130px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.main button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+}
+
+.main button:hover::before {
+  left: 100%;
+}
+
+/* Home button */
+.login a:first-of-type button {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: white;
+  border: 2px solid #3b82f6;
+}
+
+.login a:first-of-type button:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+}
+
+/* My Bookings button */
+.login a:nth-of-type(2) button {
+  background: linear-gradient(135deg, #10b981 0%, #047857 100%);
+  color: white;
+  border: 2px solid #10b981;
+}
+
+.login a:nth-of-type(2) button:hover {
+  background: linear-gradient(135deg, #059669 0%, #065f46 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
+}
+
+/* Login button (when not logged in) */
+#login {
+  background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+  color: #1a365d;
+  border: 2px solid #fbbf24;
+  font-weight: 800;
+  padding: 12px 40px;
+}
+
+#login:hover {
+  background: linear-gradient(135deg, #fcd34d 0%, #fbbf24 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(245, 158, 11, 0.5);
+}
+
+/* Logout button */
+.login button:last-of-type {
+  background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+  color: white;
+  border: 2px solid #ef4444;
+}
+
+.login button:last-of-type:hover {
+  background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(239, 68, 68, 0.4);
+}
+
+/* Main content area */
+main {
+  min-height: calc(100vh - 80px);
+  background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add decorative background pattern */
+main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 15% 25%, rgba(59, 130, 246, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 85% 75%, rgba(245, 158, 11, 0.08) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+/* Content inside main */
+main > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+  .main {
+    padding: 15px 25px;
+  }
+  
+  .logo img {
+    height: 45px;
+  }
+  
+  .logo p {
+    font-size: 1.6rem;
+  }
+  
+  .main button {
+    padding: 10px 22px;
+    min-width: 110px;
+    font-size: 0.95rem;
+  }
+  
+  #login {
+    padding: 10px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+    padding: 15px;
+    gap: 20px;
+    min-height: auto;
+  }
+  
+  .logo {
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .logo img {
+    height: 40px;
+  }
+  
+  .logo p {
+    font-size: 1.5rem;
+  }
+  
+  .login {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+  }
+  
+  .main button {
+    padding: 10px 20px;
+    min-width: 140px;
+    font-size: 0.9rem;
+  }
+  
+  #login {
+    width: 200px;
+    padding: 12px 20px;
+  }
+  
+  main {
+    padding: 25px 20px;
+    min-height: calc(100vh - 180px);
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    padding: 12px;
+    gap: 15px;
+  }
+  
+  .logo {
+    gap: 10px;
+  }
+  
+  .logo img {
+    height: 35px;
+  }
+  
+  .logo p {
+    font-size: 1.3rem;
+  }
+  
+  .login {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .main button {
+    width: 200px;
+    margin: 0;
+  }
+  
+  #login {
+    width: 200px;
+  }
+  
+  main {
+    padding: 20px 15px;
+    min-height: calc(100vh - 200px);
+  }
+}
+
+/* Animation for page content */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+main > * {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Floating bus animation */
+@keyframes floatBus {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(3deg);
+  }
+}
+
+.logo img {
+  animation: floatBus 4s ease-in-out infinite;
+}
+
+/* Pulse animation for login button when not logged in */
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(245, 158, 11, 0.6);
+  }
+}
+
+/* Scrolled state */
+.main.scrolled {
+    background: rgba(26, 54, 93, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 10px 40px;
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.mobile-menu-toggle span {
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle:hover span {
+    background: #fbbf24;
+}
+
+/* Mobile menu open state */
+.main.mobile-open .mobile-menu-toggle span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.main.mobile-open .mobile-menu-toggle span:nth-child(2) {
+    opacity: 0;
+}
+
+.main.mobile-open .mobile-menu-toggle span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Auth buttons container for non-logged in users */
+.auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Register button */
+#register {
+    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+    color: white;
+    border: 2px solid #8b5cf6;
+}
+
+#register:hover {
+    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
+}
+
+/* Active link indicator */
+.login a button,
+.auth-buttons a button {
+    position: relative;
+}
+
+.login a.active button::after,
+.auth-buttons a.active button::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background: #fbbf24;
+    border-radius: 50%;
+}
+
+/* User profile indicator */
+.user-indicator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-weight: 600;
+    margin-right: 20px;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #1a365d;
+}
+
+/* Dropdown menu for user */
+.user-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: white;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.user-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background 0.3s;
+}
+
+.dropdown-content a:hover {
+    background: #f5f5f5;
+}
+
+/* Responsive updates */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: rgba(26, 54, 93, 0.98);
+        backdrop-filter: blur(20px);
+        padding: 20px;
+        flex-direction: column;
+        gap: 15px;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 1000;
+    }
+    
+    .nav-links.open {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .login, .auth-buttons {
+        flex-direction: column;
+        width: 100%;
+        align-items: stretch;
+    }
+    
+    .main button {
+        width: 100%;
+        margin: 5px 0;
+    }
+    
+    .user-dropdown {
+        width: 100%;
+    }
+}
+
+/* Loading state for buttons */
+.main button.loading {
+    position: relative;
+    color: transparent;
+}
+
+.main button.loading::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Notification badge */
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ef4444;
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 10px;
+    min-width: 18px;
+    text-align: center;
+}
+
+#login:not(:hover) {
+  animation: pulse 2s infinite;
+}
+
+/* Bus moving animation in background */
+@keyframes busMove {
+  0% {
+    background-position: -100px 0;
+  }
+  100% {
+    background-position: calc(100vw + 100px) 0;
+  }
+}
+
+.main::after {
+  content: '🚌';
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  font-size: 1.5rem;
+  animation: busMove 20s linear infinite;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Mobile menu toggle for very small screens */
+@media (max-width: 360px) {
+  .main button {
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  .logo p {
+    font-size: 1.2rem;
+  }
+  
+  #login {
+    width: 100%;
+  }
+}
+
+/* Add smooth transition for login/logout state change */
+.login, #login {
+  transition: all 0.3s ease;
+}
+
+/* Loading animation for button clicks */
+.main button:active {
+  transform: scale(0.98);
+}
+
+/* Add focus styles for accessibility */
+.main button:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  main {
+    background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+  }
+  
+  main::before {
+    background-image: 
+      radial-gradient(circle at 15% 25%, rgba(59, 130, 246, 0.05) 0%, transparent 40%),
+      radial-gradient(circle at 85% 75%, rgba(245, 158, 11, 0.05) 0%, transparent 40%);
+  }
+}
