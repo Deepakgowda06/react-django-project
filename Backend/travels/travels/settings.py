@@ -29,6 +29,7 @@ ALLOWED_HOSTS = ['react-django-project-6.onrender.com', '127.0.0.1', 'localhost'
 
 
 
+
 # Application definition
 
 INSTALLED_APPS = [
